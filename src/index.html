@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
+    />
+
+    <title>Test</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="logo">Etnetera</a>
+
+      <nav class="nav">
+        <ul class="menu">
+          <li class="menu__item">Domů</li>
+          <li class="menu__item menu__item--active">Kdo jsme</li>
+          <li class="menu__item">Co děláme</li>
+          <li class="menu__item">Reference</li>
+          <li class="menu__item">Práce u nás</li>
+          <li class="menu__item">Kontakt</li>
+        </ul>
+      </nav>
+
+      <button class="menu-icon"></button>
+    </header>
+
+    <section class="carousel">
+      <button id="prev" class="carousel__prev"></button>
+      <ul class="carousel__feed">
+        <li class="carousel__item active">
+          <h2 class="carousel__title">Pridej se v Etnetere mezi kodery 1</h2>
+          <p>
+            Čeká tě tým mladých lidí zapálených nejen do kódování. Nejsme žádný
+            tiše pracující tým. Rádi si s tebou i během práce pokecáme, zajdeme
+            na oběd nebo poradíme s problémem.
+          </p>
+          <button class="carousel__read-more">Více o nás</button>
+        </li>
+        <li class="carousel__item">
+          <h2 class="carousel__title">Mobile development 1</h2>
+          <p>
+            Efficiently unleash cross-media information without cross-media
+            value. Quickly maximize timely deliverables for real-time schemas.
+          </p>
+          <p>
+            Dramatically maintain clicks-and-mortar solutions without functional
+            solutions.
+          </p>
+
+          <button class="carousel__read-more">Více o mobile</button>
+        </li>
+        <li class="carousel__item">
+          <h2 class="carousel__title">Mobile development 2</h2>
+          <p>
+            Efficiently unleash cross-media information without cross-media
+            value. Quickly maximize timely deliverables for real-time schemas.
+          </p>
+          <p>
+            Dramatically maintain clicks-and-mortar solutions without functional
+            solutions.
+          </p>
+          <button class="carousel__read-more">Více o mobile</button>
+        </li>
+      </ul>
+      <button id="next" class="carousel__next"></button>
+    </section>
+
+    <ul class="quick-news">
+      <li class="quick-news__item">
+        <span class="quick-news__date">Před 12 dny</span>
+        <p class="quick-news__content">
+          Jiří Štěpán z Etnetera Activate poodhalil zákulisí vykutálené náborové
+          kampaně.
+        </p>
+        <button class="quick-news__read-more">Přečíst</button>
+      </li>
+    </ul>
+
+    <section class="about-us">
+      <article class="article article--floating-img">
+        <h2 class="article__title">Co jsme zac?</h2>
+        <img class="img" src="assets/images/budova.png" alt="Budova" />
+        <p class="paragraph">
+          V roce 1997 si Martin a Vašek chtěli přivydělat při studiu ČVUT.
+          Založili firmu a brzy s překvapením zjistili, že mohou zaměstnat i své
+          přátele, kteří sdílí jejich znalosti a smysl pro humor. Po 20+ letech
+          úspěšného fungování je Etnetera přední společností v oblasti vývoje
+          webových portálů a aplikací. Naším cílem je být jedničkou na českém
+          trhu v tomto segmentu. Orientujeme se na dlouhodobá partnerství a
+          hledání jedinečných řešení s přidanou hodnotou, která vás posunou
+          vpřed. Naše sebedůvěra stojí na silném stabilním zázemí a zkušenostech
+          z tisíce náročných projektů pro klienty, ktěří jsou špičkou v oboru.
+          Držíme slovo i termíny, dokážeme přiznat a napravit chybu. Věříme sobě
+          i vám.
+        </p>
+        <p class="paragraph">
+          Pracujeme v liberálním a otevřeném prostředí bez kravat a procesních
+          příruček. Inspirujeme se principy svobodné firmy, kde se zisky dělí
+          transparentně, týmy si určují svá vlastní pravidla a management nemá
+          nadstandardní benefity. Rádi společně sportujeme a podporujeme se.
+          Kopeme za jeden tým.
+        </p>
+        <p class="paragraph">
+          Není proto náhoda, že jsme se
+          <span class="bubble" data-title="hustý, co?">4 roky po sobě</span>
+          umístili na třech nejvyšších příčkách v soutěži Best Employers ČR.
+        </p>
+      </article>
+
+      <article class="article article--graph">
+        <h2 class="article__title">Návštěvnost firmy</h2>
+        <div class="primary-axis"></div>
+
+        <div class="data-axis"></div>
+        <table
+          id="charts"
+          class="charts-css column show-labels show-primary-axis"
+        >
+          <caption>
+            Návštěvnost firmy
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">8:00</th>
+              <td
+                style="--size: 0.4; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+              <td
+                style="--size: 0.8; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">9:00</th>
+              <td
+                style="--size: 0.8; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+              <td
+                style="--size: 0.6; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">10:00</th>
+              <td
+                style="--size: 0.1; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+              <td
+                style="--size: 0.3; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">11:00</th>
+              <td
+                style="--size: 0.6; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+              <td style="--size: 1; --color: hsl(var(--clr-orange))"></td>
+            </tr>
+            <tr>
+              <th scope="row">12:00</th>
+              <td style="--size: 0.95; --color: hsl(var(--clr-orange))"></td>
+              <td style="--size: 0.88; --color: hsl(var(--clr-orange))"></td>
+            </tr>
+            <tr>
+              <th scope="row">13:00</th>
+              <td
+                style="--size: 0.7; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+              <td
+                style="--size: 0.6; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">14:00</th>
+              <td
+                style="--size: 0.5; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+              <td
+                style="--size: 0.3; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">15:00</th>
+              <td
+                style="--size: 0.4; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+              <td
+                style="--size: 0.7; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">16:00</th>
+              <td
+                style="--size: 0.5; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+              <td style="--size: 0.9; --color: hsl(var(--clr-orange))"></td>
+            </tr>
+            <tr>
+              <th scope="row">17:00</th>
+              <td style="--size: 0.85; --color: hsl(var(--clr-orange))"></td>
+              <td style="--size: 0.89; --color: hsl(var(--clr-orange))"></td>
+            </tr>
+            <tr>
+              <th scope="row">18:00</th>
+              <td style="--size: 0.89; --color: hsl(var(--clr-orange))"></td>
+              <td
+                style="--size: 0.7; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">19:00</th>
+              <td
+                style="--size: 0.7; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+              <td
+                style="--size: 0.5; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">20:00</th>
+              <td style="--size: 0.87; --color: hsl(var(--clr-orange))"></td>
+              <td
+                style="--size: 0.6; --color: hsl(var(--clr-graph-pos-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">21:00</th>
+              <td
+                style="--size: 0.5; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+              <td
+                style="--size: 0.4; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row">22:00</th>
+              <td
+                style="--size: 0.2; --color: hsl(var(--clr-graph-no-front))"
+              ></td>
+              <td
+                style="--size: 0.2; --color: rgba($color: #000000, $alpha: 0.1)"
+              ></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ul class="charts-css legend legend-inline legend-circle">
+          <li>bez fronty</li>
+          <li>možnost fronty</li>
+          <li>pravděpodobné čekání ve frontě</li>
+        </ul>
+      </article>
+
+      <article class="article">
+        <h2 class="article__title">Chceš být naším parťákem?</h2>
+        <span>Měl(a) bys:</span>
+        <ul class="list list--custom-marker">
+          <li class="list__item">
+            Žít HTML5, CSS3. Doslova.Tento jazyk Ti občas připadá přirozenější
+            než čeština.
+          </li>
+          <li class="list__item">Znát Javascript.</li>
+          <li class="list__item">
+            Nad pojmy ES6/7, React a Redux bys neměl bezradně krčit rameny, ale
+            bezpečně je znát.
+          </li>
+          <li class="list__item">
+            Node.js je Tvůj dobrý kamarád, který používáš při buildování
+          </li>
+          <li class="list__item">
+            Velkou výhodu představují dobré vztahy s dalšími JS frameworky. Tzn.
+            pokud si tykáš třeba s Angular, Vue.js či Vanilla JS.
+          </li>
+          <li class="list__item">
+            Uvedené technologie Tě zajímají, ale nemáš s nimi moc zkušeností?
+            Nevadí, stav se k nám na kafe, pro
+          </li>
+        </ul>
+      </article>
+      <article class="article">
+        <h2 class="article__title">Co za to dostaneš?</h2>
+        <span>Budeme si tě hýčkat např.:</span>
+        <ol class="list">
+          <li class="list__item">
+            Komfortním pracovním prostředím, které je unikátní kombinací
+            kanceláří, tělocvičny, odpočinkových prostor a kavárny. U nás se
+            strohé prostředí a nažehlené límečky fakt nenosí.
+          </li>
+          <li class="list__item">
+            Pestrým koktejlem takových těch typických benefitů jako jsou třeba
+            stravenková platební karta, Multisport karta, příspěvky na vzdělání,
+            dopravu a další.
+          </li>
+          <li class="list__item">
+            Možností pořádně si oddychnout. Nejen v našich relaxačních
+            prostorech, ale třeba na pláži v exotice. Díky 5 týdnům placené
+            dovolené.
+          </li>
+          <li class="list__item">
+            Inspirativním prostředím plným zajímavých lidí, které stojí za to
+            poznat. Organizujeme pravidelné TechLunche, kdy nad lahodnou pizzou
+            sdílíme naše nové poznatky a vědomosti.
+          </li>
+          <li class="list__item">
+            A hlavně… svobodou!!! Budeme rádi, pokud s námi budeš v kanceláři,
+            ale rozumíme tomu, že někdy budeš chtít pracovat i odjinud. Zároveň
+            chápeme, že každému z nás vyhovuje jiná pracovní doba a zařízení, na
+            kterém pracuje. Pojďme se pobavit o tvých preferencích, určitě se
+            domluvíme.
+          </li>
+        </ol>
+      </article>
+    </section>
+
+    <ul class="news-feed">
+      <li class="news-feed-card news-feed-card--light">
+        <h3 class="news-feed-card__title">Sdílení vedomostí</h3>
+        <p>
+          Inspirativní prostředí plné zajímavých lidí, které stojí za to poznat.
+          Organizujeme pravidelné TechLunche, kdy nad lahodnou pizzou sdílíme
+          naše nové poznatky a vědomosti.
+        </p>
+        <footer class="news-feed-card__footer">
+          <span class="date">11.ledna</span>
+          <span class="tag">#etnplesk</span>
+        </footer>
+      </li>
+      <li class="news-feed-card news-feed-card--dark">
+        <h3 class="news-feed-card__title">
+          O lidi se staráme někdy víc než o klienty
+        </h3>
+        <p>
+          Komfortní pracovní prostředí, které je unikátní kombinací kanceláří,
+          tělocvičny, odpočinkových prostor a kavárny. U nás se strohé prostředí
+          a nažehlené límečky fakt nenosí.
+        </p>
+        <footer class="news-feed-card__footer">
+          <span class="date">12.ledna</span>
+          <span class="tag">#etnplesk</span>
+        </footer>
+      </li>
+      <li class="news-feed-card news-feed-card--light">
+        <h3 class="news-feed-card__title">Jaké u nás dostaneš benefity?</h3>
+        <p>
+          Pestrým koktejlem takových těch typických benefitů jako jsou třeba
+          stravenková platební karta, Multisport karta, příspěvky na vzdělání,
+          dopravu a penzijní pojištění.
+        </p>
+        <footer class="news-feed-card__footer">
+          <span class="date">12.ledna</span>
+          <span class="tag">#etnplesk</span>
+        </footer>
+      </li>
+    </ul>
+    <footer class="footer">
+      <span>Copyright</span>
+      <span>&#169; 2019 Etnetera</span>
+      <span>Jsme hrdým členem Etnetera Group</span>
+    </footer>
+
+    <button id="newsletter-open" class="newsletter__open"></button>
+
+    <div class="newsletter">
+      <button id="newsletter-close" class="newsletter__close"></button>
+      <h3 class="newsletter__title">
+        Dostávejte články přímo do vaší e-mailové schránky!
+      </h3>
+      <form class="newsletter__form" action="#">
+        <label for="email" class="label">Vaše e-mailová adresa</label>
+        <input type="email" name="email" class="input-text" id="email" />
+        <input type="submit" class="submit" value="Odeslat" />
+      </form>
+      <p>
+        Podmínky zpracování osobních údajů („Podmínky“) poskytují informace o
+        shromažďování, zaznamenání, používání a jiného zpracování osobních údajů
+        společností Etnetera a.s. se sídlem Jankovcova 1037/49, 170 00 Praha 7,
+        IČO:&nbsp;25103814, zapsána u MS Praha, sp.zn. B 11168, jakožto správcem
+        osobních údajů.
+      </p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

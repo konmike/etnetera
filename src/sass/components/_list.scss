@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as *;
+
+.list{
+    $this: &;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    
+    &__item{
+        margin-block: 0.5em;
+        padding-left: 1em;
+        
+        &::marker{
+            color: hsl(var(--clr-orange));
+        }
+    }
+
+    &--custom-marker{
+        padding-left: 40px;
+        #{$this}__item{
+            padding-left: 0.5em;
+            @include custom-marker("\f00c");
+        }
+        
+    }
+}

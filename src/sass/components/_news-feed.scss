@@ -1,0 +1,9 @@
+.news-feed{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    padding: 0;
+    list-style: none;
+}

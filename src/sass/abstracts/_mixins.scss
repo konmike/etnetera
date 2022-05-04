@@ -1,0 +1,20 @@
+@use "variables" as *;
+
+@mixin mq($key) {
+  $size: map-get(
+    $map: $breakpoints,
+    $key: $key,
+  );
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin custom-marker($marker){
+  &::marker {
+    content: $marker;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+  }
+}
