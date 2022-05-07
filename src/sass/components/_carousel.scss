@@ -18,9 +18,10 @@
     border: 0;
     transition: background-image 200ms;
 
+    transform: translateY(-50%);
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    z-index: 4;
 
     @include mq(desktop){
         width: 50px;
