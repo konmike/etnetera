@@ -32,7 +32,9 @@
     background-image: url("../assets/icons/left-arrow.svg");    
     left: 1em;
 
-    &:hover{
+    &:hover
+    &:focus,
+    &:focus-within{
         background-image: url("../assets/icons/left-arrow-orange.svg");
     }
 
@@ -44,7 +46,9 @@
     background-image: url("../assets/icons/right-arrow.svg");
     right: 1em;
 
-    &:hover{
+    &:hover,
+    &:focus,
+    &:focus-within{
         background-image: url("../assets/icons/right-arrow-orange.svg");
     }
 
