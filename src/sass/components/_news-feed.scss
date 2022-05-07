@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .news-feed{
     display: flex;
     flex-direction: row;
@@ -5,5 +7,15 @@
     justify-content: center;
     gap: 1em;
     padding: 0;
+    margin-top: 2em;
     list-style: none;
+
+    @include mq(desktop){
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: center;
+        column-gap: 4em;
+        max-width: var(--container-width);
+        margin-inline: auto;
+    }
 }

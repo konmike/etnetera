@@ -21,62 +21,67 @@
       href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
     />
 
-    <title>Test</title>
+    <title>Etnetera úkol</title>
   </head>
   <body>
     <header class="header">
       <a href="/" class="logo">Etnetera</a>
 
       <nav class="nav">
-        <ul class="menu">
-          <li class="menu__item">Domů</li>
-          <li class="menu__item menu__item--active">Kdo jsme</li>
-          <li class="menu__item">Co děláme</li>
-          <li class="menu__item">Reference</li>
-          <li class="menu__item">Práce u nás</li>
-          <li class="menu__item">Kontakt</li>
+        <ul class="nav__list">
+          <li class="nav__item">Domů</li>
+          <li class="nav__item nav__item--active">Kdo jsme</li>
+          <li class="nav__item">Co děláme</li>
+          <li class="nav__item">Reference</li>
+          <li class="nav__item">Práce u nás</li>
+          <li class="nav__item">Kontakt</li>
         </ul>
+        <button class="nav__icon"></button>
       </nav>
-
-      <button class="menu-icon"></button>
     </header>
 
     <section class="carousel">
       <button id="prev" class="carousel__prev"></button>
       <ul class="carousel__feed">
         <li class="carousel__item active">
-          <h2 class="carousel__title">Pridej se v Etnetere mezi kodery 1</h2>
-          <p>
-            Čeká tě tým mladých lidí zapálených nejen do kódování. Nejsme žádný
-            tiše pracující tým. Rádi si s tebou i během práce pokecáme, zajdeme
-            na oběd nebo poradíme s problémem.
-          </p>
-          <button class="carousel__read-more">Více o nás</button>
+          <article class="carousel__container-teaser">
+            <h2 class="carousel__title">Pridej se v Etnetere mezi kodery 1</h2>
+            <p class="carousel__content">
+              Čeká tě tým mladých lidí zapálených nejen do kódování. Nejsme
+              žádný tiše pracující tým. Rádi si s tebou i během práce pokecáme,
+              zajdeme na oběd nebo poradíme s problémem.
+            </p>
+            <button class="carousel__read-more">Více o nás</button>
+          </article>
         </li>
         <li class="carousel__item">
-          <h2 class="carousel__title">Mobile development 1</h2>
-          <p>
-            Efficiently unleash cross-media information without cross-media
-            value. Quickly maximize timely deliverables for real-time schemas.
-          </p>
-          <p>
-            Dramatically maintain clicks-and-mortar solutions without functional
-            solutions.
-          </p>
+          <article class="carousel__container-teaser">
+            <h2 class="carousel__title">Mobile development 1</h2>
+            <p class="carousel__content">
+              Efficiently unleash cross-media information without cross-media
+              value. Quickly maximize timely deliverables for real-time schemas.
+            </p>
+            <p class="carousel__content">
+              Dramatically maintain clicks-and-mortar solutions without
+              functional solutions.
+            </p>
 
-          <button class="carousel__read-more">Více o mobile</button>
+            <button class="carousel__read-more">Více o mobile</button>
+          </article>
         </li>
         <li class="carousel__item">
-          <h2 class="carousel__title">Mobile development 2</h2>
-          <p>
-            Efficiently unleash cross-media information without cross-media
-            value. Quickly maximize timely deliverables for real-time schemas.
-          </p>
-          <p>
-            Dramatically maintain clicks-and-mortar solutions without functional
-            solutions.
-          </p>
-          <button class="carousel__read-more">Více o mobile</button>
+          <article class="carousel__container-teaser">
+            <h2 class="carousel__title">Mobile development 2</h2>
+            <p class="carousel__content">
+              Efficiently unleash cross-media information without cross-media
+              value. Quickly maximize timely deliverables for real-time schemas.
+            </p>
+            <p class="carousel__content">
+              Dramatically maintain clicks-and-mortar solutions without
+              functional solutions.
+            </p>
+            <button class="carousel__read-more">Více o mobile</button>
+          </article>
         </li>
       </ul>
       <button id="next" class="carousel__next"></button>
@@ -93,20 +98,25 @@
       </li>
     </ul>
 
-    <section class="about-us">
+    <section class="section section--bg-dark">
       <article class="article article--floating-img">
-        <h2 class="article__title">Co jsme zac?</h2>
+        <h2 class="article__title">Co jsme zač?</h2>
         <img class="img" src="assets/images/budova.png" alt="Budova" />
         <p class="paragraph">
           V roce 1997 si Martin a Vašek chtěli přivydělat při studiu ČVUT.
           Založili firmu a brzy s překvapením zjistili, že mohou zaměstnat i své
           přátele, kteří sdílí jejich znalosti a smysl pro humor. Po 20+ letech
-          úspěšného fungování je Etnetera přední společností v oblasti vývoje
-          webových portálů a aplikací. Naším cílem je být jedničkou na českém
-          trhu v tomto segmentu. Orientujeme se na dlouhodobá partnerství a
-          hledání jedinečných řešení s přidanou hodnotou, která vás posunou
-          vpřed. Naše sebedůvěra stojí na silném stabilním zázemí a zkušenostech
-          z tisíce náročných projektů pro klienty, ktěří jsou špičkou v oboru.
+          úspěšného fungování je Etnetera
+          <strong
+            >přední společností v oblasti vývoje webových portálů a
+            aplikací</strong
+          >. Naším cílem je být jedničkou na českém trhu v tomto segmentu.
+          Orientujeme se na
+          <strong
+            >dlouhodobá partnerství a hledání jedinečných řešení s přidanou
+            hodnotou, která vás posunou vpřed</strong
+          >. Naše sebedůvěra stojí na silném stabilním zázemí a zkušenostech z
+          tisíce náročných projektů pro klienty, ktěří jsou špičkou v oboru.
           Držíme slovo i termíny, dokážeme přiznat a napravit chybu. Věříme sobě
           i vám.
         </p>
@@ -266,12 +276,14 @@
         </table>
 
         <ul class="charts-css legend legend-inline legend-circle">
-          <li>bez fronty</li>
-          <li>možnost fronty</li>
-          <li>pravděpodobné čekání ve frontě</li>
+          <li class="legend__item">bez fronty</li>
+          <li class="legend__item">možnost fronty</li>
+          <li class="legend__item">pravděpodobné čekání ve frontě</li>
         </ul>
       </article>
+    </section>
 
+    <section class="section section--col-2 section--bg-dark">
       <article class="article">
         <h2 class="article__title">Chceš být naším parťákem?</h2>
         <span>Měl(a) bys:</span>
@@ -336,47 +348,50 @@
     <ul class="news-feed">
       <li class="news-feed-card news-feed-card--light">
         <h3 class="news-feed-card__title">Sdílení vedomostí</h3>
-        <p>
+        <p class="news-feed-card__content">
           Inspirativní prostředí plné zajímavých lidí, které stojí za to poznat.
           Organizujeme pravidelné TechLunche, kdy nad lahodnou pizzou sdílíme
           naše nové poznatky a vědomosti.
         </p>
         <footer class="news-feed-card__footer">
-          <span class="date">11.ledna</span>
-          <span class="tag">#etnplesk</span>
+          <span class="news-feed-card__date">11.ledna</span>
+          <span class="news-feed-card__tag">#etnplesk</span>
         </footer>
       </li>
       <li class="news-feed-card news-feed-card--dark">
         <h3 class="news-feed-card__title">
           O lidi se staráme někdy víc než o klienty
         </h3>
-        <p>
+        <p class="news-feed-card__content">
           Komfortní pracovní prostředí, které je unikátní kombinací kanceláří,
           tělocvičny, odpočinkových prostor a kavárny. U nás se strohé prostředí
           a nažehlené límečky fakt nenosí.
         </p>
         <footer class="news-feed-card__footer">
-          <span class="date">12.ledna</span>
-          <span class="tag">#etnplesk</span>
+          <span class="news-feed-card__date">12.ledna</span>
+          <span class="news-feed-card__tag">#etnplesk</span>
         </footer>
       </li>
       <li class="news-feed-card news-feed-card--light">
         <h3 class="news-feed-card__title">Jaké u nás dostaneš benefity?</h3>
-        <p>
+        <p class="news-feed-card__content">
           Pestrým koktejlem takových těch typických benefitů jako jsou třeba
           stravenková platební karta, Multisport karta, příspěvky na vzdělání,
           dopravu a penzijní pojištění.
         </p>
         <footer class="news-feed-card__footer">
-          <span class="date">12.ledna</span>
-          <span class="tag">#etnplesk</span>
+          <span class="news-feed-card__date">12.ledna</span>
+          <span class="news-feed-card__tag">#etnplesk</span>
         </footer>
       </li>
     </ul>
     <footer class="footer">
       <span>Copyright</span>
       <span>&#169; 2019 Etnetera</span>
-      <span>Jsme hrdým členem Etnetera Group</span>
+      <span
+        >Jsme hrdým členem
+        <a href="https://etnetera.cz">Etnetera Group</a></span
+      >
     </footer>
 
     <button id="newsletter-open" class="newsletter__open"></button>

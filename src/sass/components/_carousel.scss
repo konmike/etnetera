@@ -1,74 +1,117 @@
+@use "../abstracts/mixins" as *;
+
 .carousel{
     display: flex;
     max-width: 100%;
     position: relative;
+}
 
-    &__feed{
-        padding: 0;
+.carousel__next, 
+.carousel__prev{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    max-height: fit-content;
+    cursor: pointer;
+    border: 0;
+    transition: background-image 200ms;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include mq(desktop){
+        width: 50px;
+        height: 50px;
+    }
+}
+.carousel__prev{
+    background-image: url("../assets/icons/left-arrow.svg");    
+    left: 1em;
+
+    &:hover{
+        background-image: url("../assets/icons/left-arrow-orange.svg");
     }
 
-    &__title{
-        font-weight: 400;
-        font-size: 1.7rem;
-        margin-block: 0.5em 0;
+    @include mq(desktop){
+        left: 2em;
+    }
+}
+.carousel__next{
+    background-image: url("../assets/icons/right-arrow.svg");
+    right: 1em;
+
+    &:hover{
+        background-image: url("../assets/icons/right-arrow-orange.svg");
     }
 
-    &__item{
-        display: none;
-        flex-direction: column;
-        row-gap: 1em;
-        justify-content: center;
-        padding: 2em 3rem;
-        min-height: 60vh;
-        
-        background-repeat: no-repeat;
-        background-size: cover;
-        
-        &.active{
-            display: flex;
-        }
-        &:first-child{
-            background-image: url("../assets/images/carousel-bg.png");
-        }
-        &:nth-child(2),
-        &:nth-child(3){
-            background-image: url("../assets/images/carousel-bg2.png");
-        }
+    @include mq(desktop){
+        right: 2em;
     }
+}
 
-    &__next, &__prev{
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 12px;
-        height: 24px;
-        max-height: fit-content;
-        
-        border: 0;
-
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+.carousel__feed{
+    width: 100%;
+    padding: 0;
+    margin-inline: auto;
+}
+.carousel__item{
+    display: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    &.active{
+        display: block;
     }
-
-    &__prev{
-        background-image: url("../assets/icons/arrow-left.png");
-        
-        left: 1em;
+    &:first-child{
+        background-image: url("../assets/images/carousel-bg.png");
     }
-    &__next{
-        background-image: url("../assets/icons/arrow-right.png");
-
-        right: 1em;
+    &:nth-child(2),
+    &:nth-child(3){
+        background-image: url("../assets/images/carousel-bg2.png");
     }
+}
+.carousel__container-teaser{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    justify-content: center;
+    padding: 2em 3em;
+    min-height: 60vh;
+    max-width: 100%;
+    
+    @include mq(desktop){
+        padding-inline: 0;
+        max-width: var(--container-width);
+        margin-inline: auto;
+    }   
+}
+.carousel__title{
+    margin-block: 0.5em 0;
+    font-weight: 400;
+    font-size: 2rem;
+}
+.carousel__content{
+    @include mq(tablet){
+        max-width: 80%;
+    }
+}
+.carousel__read-more{
+    align-self: flex-end;
+    max-width: fit-content;
+    padding: 0.5em 3em;
+    border: 1px solid hsl(var(--clr-orange));
+    border-radius: 15px;
+    background-color: white;
+    color: hsl(var(--clr-orange));
+    box-shadow: 0 0 4px 1px transparent;
+    cursor: pointer;
+    transition: box-shadow 175ms;
 
-    &__read-more{
-        align-self: flex-end;
-        max-width: fit-content;
-        border: 1px solid hsl(var(--clr-orange));
-        border-radius: 15px;
-        background-color: white;
-        padding: 0.5em 3em;
-        color: hsl(var(--clr-orange));
+    &:hover,
+    &:focus{
+        box-shadow: 0 0 4px 1px hsl(var(--clr-orange));
     }
 }

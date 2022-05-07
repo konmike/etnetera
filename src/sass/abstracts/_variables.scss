@@ -2,9 +2,15 @@
     --clr-orange: 14, 84%, 56%;
     --clr-graph-no-front: 25, 39%, 84%;
     --clr-graph-pos-front: 14, 56%, 70%;
+
+    --container-width: 1000px;
+    
+    --header-padding: 1em;
+    --logo-width: 140px;
+    --logo-height: 40px;
 }
 
 $breakpoints: (
-  desktop: 62em,
-  tablet: 36em,
+  desktop: 70em,
+  tablet: 40em,
 );

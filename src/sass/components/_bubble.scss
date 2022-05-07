@@ -1,0 +1,44 @@
+.bubble{
+    --clr-bg: hsl(0, 0%, 21%);
+
+    position: relative;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: hsl(var(--clr-orange));
+    text-underline-offset: 0.2em;
+    white-space: nowrap;
+}
+
+.bubble:hover::before,
+.bubble:focus::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    margin: -20px auto 0;
+    background: var(--clr-bg);
+    transform: rotate(315deg);
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.bubble:hover::after,
+.bubble:focus::after {
+    content: attr(data-title);
+    display: block;
+    padding-inline: 1em;
+    margin-bottom: 0.2em;
+    min-width: 10ch;
+    border-radius: 3px;
+    background-color: var(--clr-bg);
+    color: hsl(0, 0%, 100%);
+    font-weight: 400;
+    text-align: center;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -2em;
+}

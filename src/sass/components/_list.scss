@@ -5,15 +5,6 @@
     padding-top: 0.5em;
     padding-left: 1em;
     
-    &__item{
-        margin-block: 0.5em;
-        padding-left: 1em;
-        
-        &::marker{
-            color: hsl(var(--clr-orange));
-        }
-    }
-
     &--custom-marker{
         padding-left: 40px;
         #{$this}__item{
@@ -21,5 +12,13 @@
             @include custom-marker("\f00c");
         }
         
+    }
+}
+.list__item{
+    margin-block: 0.5em;
+    padding-left: 1em;
+    
+    &::marker{
+        color: hsl(var(--clr-orange));
     }
 }

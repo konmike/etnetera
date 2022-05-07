@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .newsletter{
     display: none;
     flex-direction: column;
@@ -14,49 +16,14 @@
     &.active{
         display: flex;
     }
-    &__form{
-        display: flex;
-        flex-direction: column;
-
-        .label{
-            margin-bottom: 0.5em;
-            margin-top: 1.5em;
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: rgba(0,0,0,0.4);
-        }
-        .input-text{
-            margin-bottom: 1.5em;
-            border-radius: 2px;
-            border: 2px solid rgba(0,0,0,0.4);
-            line-height: 2;
-
-            &:focus{
-                border-color: hsl(var(--clr-orange));
-                outline: 1px solid hsl(var(--clr-orange));
-            }
-        }
-        .submit{
-            max-width: fit-content;
-            padding: 0.7em 4em;
-            margin-bottom: 1.5em;
-            border: 0;
-            border-radius: 25px;
-            font-size: 1rem;
-            color: white;
-            background-color: hsl(var(--clr-orange));
-        }
-    }
-    p{
-        font-size: 0.8rem;
-        color: rgba(0,0,0,0.6);
-    }
 }
+
 
 .newsletter__close{
     background-color: transparent;
     border: 0;
+    cursor: pointer;
+
     position: absolute;
     top: 0.5em;
     right: 0.5em;
@@ -77,6 +44,7 @@
     border-radius: 50%;
     box-shadow: 0 0 8px 1px rgb(0 0 0 / 30%);
     background-color: hsl(var(--clr-orange));
+    cursor: pointer;
 
     position: fixed;
     bottom: 1em;
@@ -84,14 +52,55 @@
 
     &::before{
         content: "";
+        width: 100%;
+        height: 100%;
         background-image: url("../assets/icons/mail.png");
         background-position: center;
         background-position: center;
         background-repeat: no-repeat;
         background-size: auto;
-        width: 100%;
-        height: 100%;
+
         position: absolute;
         inset: 0;
     }
+}
+
+.newsletter__form{
+    display: flex;
+    flex-direction: column;
+
+    .label{
+        margin-bottom: 0.5em;
+        margin-top: 1.5em;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: rgba(0,0,0,0.4);
+    }
+    .input-text{
+        margin-bottom: 1.5em;
+        border-radius: 2px;
+        border: 2px solid rgba(0,0,0,0.4);
+        line-height: 2;
+
+        &:focus{
+            border-color: hsl(var(--clr-orange));
+            outline: 1px solid hsl(var(--clr-orange));
+        }
+    }
+    .submit{
+        max-width: fit-content;
+        padding: 0.7em 4em;
+        margin-bottom: 1.5em;
+        border: 0;
+        border-radius: 25px;
+        font-size: 1rem;
+        color: white;
+        background-color: hsl(var(--clr-orange));
+    }
+}
+
+.newsletter__notice{
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.6);
 }

@@ -1,15 +1,11 @@
 $(document).ready(function () {
-  $(".menu-icon").click(function () {
-    $(".menu").toggleClass("open");
+  $(".nav__icon").click(function () {
+    $(".nav__list").toggleClass("open");
     $(".header").toggleClass("open");
     $(this).toggleClass("close");
   });
 
-  $(".carousel__feed").on("swipeleft", function () {
-    console.log("test");
-  });
-
-  $("#next").on("click", function () {
+  $("#next").click(function () {
     let active = $(".carousel__item.active");
     let next = $(".carousel__item.active").next();
     let first = $(".carousel__item").first();
@@ -22,7 +18,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#prev").on("click", function () {
+  $("#prev").click(function () {
     let active = $(".carousel__item.active");
     let prev = $(".carousel__item.active").prev();
     let last = $(".carousel__item").last();
@@ -35,10 +31,10 @@ $(document).ready(function () {
     }
   });
 
-  $("#newsletter-open").on("click", function () {
+  $("#newsletter-open").click(function () {
     $(".newsletter").fadeToggle().css("display", "flex");
   });
-  $("#newsletter-close").on("click", function () {
+  $("#newsletter-close").click(function () {
     $(".newsletter").fadeOut();
   });
 });

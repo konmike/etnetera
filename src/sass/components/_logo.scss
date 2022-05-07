@@ -1,0 +1,14 @@
+.logo{
+    grid-column: 1/2;
+    
+    display: inline-block;
+    height: var(--logo-height);
+    width: var(--logo-width);
+    background: transparent no-repeat center center;
+    background-image: url("../assets/logo.svg");
+    background-size: contain;
+    overflow: hidden;
+    text-indent: -9999px;
+    transition: all 200ms ease-out;
+    transition-property: opacity;
+}
